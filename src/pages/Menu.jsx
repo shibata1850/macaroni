@@ -6,6 +6,7 @@ const menuPages = [
   'menu-page-02.jpg',
   'menu-page-03.jpg',
   'menu-page-04.jpg',
+  'menu-page-05.jpg',
 ]
 
 export default function Menu() {
@@ -30,9 +31,6 @@ export default function Menu() {
       <section className="menu-full">
         <div className="menu-full-inner">
           <div className="menu-full-section reveal" id="menu-dinner">
-            <div className="menu-section-heading">
-              <span className="section-label section-label-both">Dinner Menu</span>
-            </div>
             <div className="menu-pdf-pages">
               {menuPages.map((page, i) => (
                 <img
