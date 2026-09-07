@@ -88,9 +88,10 @@ export default function Admin() {
     <section className="page" id="page-admin">
       <div className="cms-admin-wrap">
         <div className="cms-admin-header">
-          <h1 className="cms-admin-title">
-            macaroni<span className="brand-dot-en">.</span> 管理画面
-          </h1>
+          <div className="cms-admin-title">
+            <img src="/images/logo.png" alt="macaroni." />
+            <span>管理画面</span>
+          </div>
           <button className="cms-logout" onClick={handleSignOut}>
             ログアウト
           </button>

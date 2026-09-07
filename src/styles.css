@@ -986,10 +986,21 @@ nav a { color: var(--ink); }            /* 背後が常に明色のため濃色�
   border-bottom: 1px solid var(--line);
 }
 .cms-admin-title {
-  font-family: "Italiana", serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   color: var(--ink);
+}
+.cms-admin-title img {
+  display: block;
+  width: 154px;
+  height: auto;
+}
+.cms-admin-title span {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
 }
 .cms-logout {
   background: none;
@@ -1039,4 +1050,8 @@ nav a { color: var(--ink); }            /* 背後が常に明色のため濃色�
   .cms-login-wrap { padding: 8rem 1rem 4rem; }
   .cms-login-card { padding: 2rem 1.5rem; }
   .cms-admin-wrap { padding: 8rem 1rem 4rem; }
+  .cms-admin-header { align-items: flex-start; gap: 1rem; }
+  .cms-admin-title { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .cms-admin-title img { width: 132px; }
+  .cms-admin-title span { font-size: 0.75rem; }
 }
