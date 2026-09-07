@@ -832,11 +832,12 @@ header.solid .logo .brand-dot-en {
   text-align: center;
 }
 .cms-login-title {
-  font-family: "Italiana", serif;
-  font-size: 1.8rem;
-  letter-spacing: 0.18em;
-  color: var(--ink);
   margin-bottom: 0.4rem;
+}
+.cms-login-logo {
+  display: inline-block;
+  height: 32px;
+  width: auto;
 }
 .cms-login-subtitle {
   font-family: "Shippori Mincho", serif;

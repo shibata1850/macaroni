@@ -38,7 +38,7 @@ export default function Login() {
       <div className="cms-login-wrap">
         <div className="cms-login-card">
           <h1 className="cms-login-title">
-            macaroni<span className="brand-dot-en">.</span>
+            <img src="/images/logo.png" alt="macaroni." className="cms-login-logo" />
           </h1>
           <p className="cms-login-subtitle">
             {mode === 'signin' ? '管理者ログイン' : 'アカウント作成'}
