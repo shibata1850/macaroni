@@ -279,6 +279,13 @@ h2.section-title {
 .menu-pdf-page { width: 100%; max-width: 820px; height: auto; display: block; box-shadow: 0 4px 24px rgba(20,14,8,0.12); }
 .menu-full-section { margin-bottom: 5rem; scroll-margin-top: 6.5rem; }
 .menu-full-section:last-child { margin-bottom: 0; }
+.menu-section-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.menu-section-heading .section-title {
+  margin-bottom: 0;
+}
 
 @media (max-width: 720px) {
   .menu-full { padding: 4rem 1.4rem 5rem; }
