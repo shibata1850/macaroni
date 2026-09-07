@@ -19,7 +19,7 @@ export default function App() {
   }, [location.pathname])
 
   useEffect(() => {
-    const header = document.getElementById('header')
+    const header = document.querySelector('.site-header')
     const onScroll = () => {
       if (window.scrollY > 80) header.classList.add('scrolled')
       else header.classList.remove('scrolled')

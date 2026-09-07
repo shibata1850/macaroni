@@ -25,7 +25,7 @@ export default function Contact() {
             />
           </div>
           <p className="contact-shop">
-            macaroni<span className="brand-dot-en">.</span>
+            <img src="/images/logo.png" alt="macaroni." className="contact-logo" />
           </p>
           <p className="contact-addr">岩手県北上市新穀町1丁目7-35</p>
           <p className="contact-tel">

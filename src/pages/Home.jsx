@@ -18,6 +18,15 @@ const pcSlides = [
   'hero-slide-06.jpg',
 ]
 
+const foodPhotos = [
+  'hero-slide-01.jpg',
+  'hero-slide-02.jpg',
+  'hero-slide-03.jpg',
+  'hero-slide-04.jpg',
+  'hero-slide-05.jpg',
+  'hero-slide-06.jpg',
+]
+
 const CameraIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="2" y="6" width="20" height="14" rx="3" stroke="white" stroke-width="1.5" />
@@ -102,6 +111,23 @@ export default function Home() {
             height="300"
             alt="macaroni. マーク"
           />
+        </div>
+      </section>
+
+      <section className="food-gallery" aria-labelledby="food-gallery-title">
+        <div className="food-gallery-header">
+          <span className="section-label section-label-both">Our dishes</span>
+          <h2 id="food-gallery-title">気どらない、北上の一皿</h2>
+        </div>
+        <div className="food-gallery-grid">
+          {foodPhotos.map((photo, i) => (
+            <img
+              key={photo}
+              src={`/images/${photo}`}
+              alt={`macaroni. 料理写真 ${i + 1}`}
+              loading="lazy"
+            />
+          ))}
         </div>
       </section>
 
