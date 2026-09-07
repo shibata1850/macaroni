@@ -17,7 +17,7 @@ export default function Menu() {
       <section className="page-banner">
         <div
           className="page-banner-img"
-          style={{ backgroundImage: "url('/images/menu-hero.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero-counter.jpg')" }}
         />
         <div className="page-banner-overlay" />
         <div className="page-banner-content">
