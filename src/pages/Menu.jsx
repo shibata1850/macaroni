@@ -32,7 +32,6 @@ export default function Menu() {
           <div className="menu-full-section reveal" id="menu-dinner">
             <div className="menu-section-heading">
               <span className="section-label section-label-both">Dinner Menu</span>
-              <h2 className="section-title">ディナーメニュー</h2>
             </div>
             <div className="menu-pdf-pages">
               {menuPages.map((page, i) => (
