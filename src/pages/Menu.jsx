@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useRevealAnimation } from '../hooks/useRevealAnimation.js'
 
 const menuPages = [
-  'menu-hero.jpg',
   'menu-page-01.jpg',
   'menu-page-02.jpg',
   'menu-page-03.jpg',
