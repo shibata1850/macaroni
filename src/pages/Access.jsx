@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase.js'
-import { useRevealAnimation } from '../hooks/useRevealAnimation.js'
-
 export default function Access() {
   const [shopInfo, setShopInfo] = useState(null)
   const [loading, setLoading] = useState(true)
-  useRevealAnimation()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,7 +58,7 @@ export default function Access() {
           {loading ? (
             <p className="shop-info-loading">読み込み中…</p>
           ) : hasContent ? (
-            <div className="shop-info-content reveal">
+            <div className="shop-info-content">
               {shopInfo.calendar_text && (
                 <div className="shop-info-section">
                   <h2 className="shop-info-heading">営業カレンダー</h2>
@@ -96,7 +93,7 @@ export default function Access() {
               )}
             </div>
           ) : (
-            <div className="shop-info-fallback reveal">
+            <div className="shop-info-fallback">
               <img
                 src="/images/access-info.jpg"
                 alt="営業カレンダー・営業時間・駐車場案内"
