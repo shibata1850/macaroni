@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase.js'
-export default function Access() {
+export default function Access({ embedded = false }) {
   const [shopInfo, setShopInfo] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -39,8 +39,8 @@ export default function Access() {
   }
 
   return (
-    <section className="page" id="page-access">
-      <section className="page-banner">
+    <section className={embedded ? 'home-information' : 'page'} id={embedded ? 'home-information' : 'page-access'} aria-label={embedded ? '営業カレンダー・駐車場案内' : undefined}>
+      {!embedded && <section className="page-banner">
         <div
           className="page-banner-img"
           style={{ backgroundImage: "url('/images/access-banner.png')" }}
@@ -51,10 +51,14 @@ export default function Access() {
           <h1>Visit us.</h1>
           <p className="jp">店舗案内</p>
         </div>
-      </section>
+      </section>}
 
       <section className="info-block">
         <div className="shop-info-inner">
+          {embedded && <div className="home-information-heading">
+            <span className="section-label section-label-both">Information</span>
+            <h2>営業カレンダー・駐車場案内</h2>
+          </div>}
           {loading ? (
             <p className="shop-info-loading">読み込み中…</p>
           ) : hasContent ? (
