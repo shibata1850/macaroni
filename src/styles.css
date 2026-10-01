@@ -83,6 +83,40 @@ body {
   text-decoration: none;
 }
 .header-action:hover { color: var(--terracotta); }
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.header-nav-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-width: 42px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.header-nav-link:hover,
+.header-nav-link.is-active { color: var(--terracotta); transform: translateY(-2px); }
+.header-nav-link svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.header-nav-link span {
+  font-family: "Shippori Mincho", serif;
+  font-size: 0.58rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
 .header-action svg {
   width: 24px;
   height: 24px;
@@ -295,6 +329,51 @@ h2.section-title {
 
 /* ============ Info / Access ============ */
 .info-block { background: var(--cream-deep); padding: 8rem 3rem; }
+.top-video-hero {
+  min-height: min(100vh, 900px);
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.top-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.top-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,12,4,0.25), rgba(20,12,4,0.12) 45%, rgba(20,12,4,0.62));
+}
+.top-video-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--cream);
+}
+.top-video-content h1 { font-family: "Italiana", serif; font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 400; letter-spacing: 0.18em; line-height: 1; margin-bottom: 1.2rem; }
+.top-video-content .hero-jp { margin-bottom: 3.5rem; }
+.home-info-section { background: var(--cream); padding: 7rem 2rem; text-align: center; }
+.home-info-header { max-width: 720px; margin: 0 auto 3.5rem; }
+.home-info-header h2 { font-family: "Italiana", serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 400; letter-spacing: 0.14em; color: var(--ink); margin: 0 0 0.8rem; }
+.home-info-header p { color: var(--ink-soft); letter-spacing: 0.18em; }
+.home-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; max-width: 980px; margin: 0 auto; }
+.home-info-card { text-align: left; padding: 2.4rem; background: var(--paper); border: 1px solid var(--line); }
+.home-info-number { font-family: "Cormorant Garamond", serif; color: var(--terracotta); font-size: 0.9rem; letter-spacing: 0.16em; }
+.home-info-card h3 { margin: 1rem 0 1.2rem; color: var(--ink); font-family: "Shippori Mincho", serif; font-size: 1.1rem; letter-spacing: 0.14em; }
+.home-info-card p { min-height: 5rem; color: var(--ink); font-family: "Shippori Mincho", serif; font-size: 0.9rem; line-height: 2; letter-spacing: 0.08em; }
+.home-info-link { margin-top: 2.5rem; padding: 0.9rem 2rem; border: 1px solid var(--ink); background: transparent; color: var(--ink); font-family: "Shippori Mincho", serif; letter-spacing: 0.12em; cursor: pointer; transition: background 0.3s, color 0.3s; }
+.home-info-link:hover { background: var(--ink); color: var(--cream); }
 
 /* ============ Instagram embed section ============ */
 .insta-section {
@@ -510,6 +589,7 @@ header.solid .logo .brand-dot-en {
 /* ============ Responsive ============ */
 @media (max-width: 900px) {
   .site-header { padding: 1rem 1.4rem; }
+  .header-nav { gap: 0.65rem; }
   .site-header.scrolled, .site-header.solid { padding: 0.8rem 1.4rem; }
   section { padding: 5rem 1.4rem; }
     .info-block { padding: 5rem 1.4rem; }
@@ -529,6 +609,10 @@ header.solid .logo .brand-dot-en {
 
 @media (max-width: 640px) {
   .site-header { padding: 0.8rem 1rem; }
+  .header-nav { gap: 0.25rem; }
+  .header-nav-link { min-width: 34px; }
+  .header-nav-link svg { width: 19px; height: 19px; }
+  .header-nav-link span { font-size: 0.49rem; }
   .site-header.scrolled, .site-header.solid { padding: 0.6rem 1rem; }
   .logo img { height: 22px; }
   .header-action { width: 32px; height: 32px; }
@@ -716,6 +800,11 @@ header.solid .logo .brand-dot-en {
   .menu-full { background: #ffffff; }
   #page-menu .reserve-strip { display: none; }
   .info-block { background: #ffffff; padding-top: 5rem; }
+  .top-video-hero { min-height: 78vh; height: 78vh; }
+  .home-info-section { padding: 5rem 1rem; }
+  .home-info-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .home-info-card { padding: 1.8rem; }
+  .home-info-card p { min-height: 0; }
   .contact-page { padding-top: 5rem; }
 }
 

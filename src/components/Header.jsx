@@ -1,11 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 
-const PhoneIcon = () => (
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M8.5 4.5 13 3l3.5 7-3.2 2.2c1.4 3 3.8 5.4 6.8 6.8l2.2-3.2 7 3.5-1.5 4.5c-.5 1.5-2 2.4-3.5 2.1C14 23.8 8.2 18 4.1 7.9 3.5 6.4 4.4 5 8.5 4.5Z" />
-  </svg>
-)
-
 const HomeIcon = () => (
   <svg viewBox="0 0 32 32" aria-hidden="true">
     <path d="m4 15.2 12-10 12 10" />
@@ -13,10 +7,37 @@ const HomeIcon = () => (
   </svg>
 )
 
+const MenuIcon = () => (
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M6 8h20M6 16h20M6 24h20" />
+  </svg>
+)
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <rect x="5" y="5" width="22" height="22" rx="6" />
+    <circle cx="16" cy="16" r="5" />
+    <circle cx="23" cy="9" r="1" fill="currentColor" stroke="none" />
+  </svg>
+)
+
+const ContactIcon = () => (
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <rect x="4" y="7" width="24" height="18" rx="2" />
+    <path d="m5 9 11 9L27 9" />
+  </svg>
+)
+
+const navItems = [
+  { label: 'ホーム', path: '/', Icon: HomeIcon },
+  { label: 'メニュー', path: '/menu', Icon: MenuIcon },
+  { label: 'Instagram', href: 'https://www.instagram.com/macaroni.kitakami/', Icon: InstagramIcon },
+  { label: 'お問い合わせ', path: '/contact', Icon: ContactIcon },
+]
+
 export default function Header() {
   const navigate = useNavigate()
   const location = useLocation()
-  const isHome = location.pathname === '/'
 
   return (
     <header id="header" className="site-header">
@@ -32,20 +53,26 @@ export default function Header() {
         <img alt="macaroni." src="/images/logo.png" />
       </a>
 
-      {isHome ? (
-        <a className="header-action" href="tel:0197726672" aria-label="電話をかける">
-          <PhoneIcon />
-        </a>
-      ) : (
-        <button
-          className="header-action"
-          type="button"
-          aria-label="ホームへ戻る"
-          onClick={() => navigate('/')}
-        >
-          <HomeIcon />
-        </button>
-      )}
+      <nav className="header-nav" aria-label="メインメニュー">
+        {navItems.map(({ label, path, href, Icon }) => (
+          <a
+            key={label}
+            className={`header-nav-link${path && location.pathname === path ? ' is-active' : ''}`}
+            href={href || `#${path}`}
+            target={href ? '_blank' : undefined}
+            rel={href ? 'noopener noreferrer' : undefined}
+            aria-label={label}
+            aria-current={path && location.pathname === path ? 'page' : undefined}
+            onClick={path ? (event) => {
+              event.preventDefault()
+              navigate(path)
+            } : undefined}
+          >
+            <Icon />
+            <span>{label}</span>
+          </a>
+        ))}
+      </nav>
     </header>
   )
 }
