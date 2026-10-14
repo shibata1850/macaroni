@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <section className="page" id="page-home">
-      <section className="top-video-hero" aria-labelledby="home-title">
+      <section className="top-video-hero">
         <video
           className="top-video"
           autoPlay
@@ -43,15 +43,8 @@ export default function Home() {
           poster="/images/hero-veg-pc.jpg"
           aria-label="macaroni. 店内と料理の紹介動画"
         >
-          <source src="/images/top-video.mp4" type="video/mp4" />
+          <source src="/videos/macaroni.mp4.mp4" type="video/mp4" />
         </video>
-        <div className="top-video-overlay" />
-        <div className="top-video-content">
-          <p className="hero-mark"><em>Ristorante &nbsp;dal &nbsp;2026</em></p>
-          <h1 id="home-title">macaroni<span className="brand-dot brand-dot-en">.</span></h1>
-          <p className="hero-jp">マカロニ<span className="brand-dot">．</span></p>
-          <p className="hero-tag">気どらない、北上の一皿</p>
-        </div>
       </section>
 
       <section className="home-info-section" aria-labelledby="home-info-title">
