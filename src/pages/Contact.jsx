@@ -1,19 +1,6 @@
 export default function Contact() {
   return (
     <section className="page" id="page-contact">
-      <section className="page-banner">
-        <div
-          className="page-banner-img"
-          style={{ backgroundImage: 'var(--img-counter)' }}
-        />
-        <div className="page-banner-overlay" />
-        <div className="page-banner-content">
-          <p className="label">Contact</p>
-          <h1>Get in touch.</h1>
-          <p className="jp">お問い合わせ</p>
-        </div>
-      </section>
-
       <section className="contact-page">
         <div className="contact-inner">
           <div className="contact-visual">
