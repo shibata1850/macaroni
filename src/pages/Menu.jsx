@@ -15,14 +15,6 @@ export default function Menu() {
 
   return (
     <section className="page" id="page-menu">
-      <section className="page-banner">
-        <div
-          className="page-banner-img"
-          style={{ backgroundImage: "url('/images/hero-counter.jpg')" }}
-        />
-        <div className="page-banner-overlay" />
-      </section>
-
       <section className="menu-full">
         <div className="menu-full-inner">
           <div className="menu-full-section reveal" id="menu-dinner">
