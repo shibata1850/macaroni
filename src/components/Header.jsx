@@ -69,7 +69,6 @@ export default function Header() {
             } : undefined}
           >
             <Icon />
-            <span>{label}</span>
           </a>
         ))}
       </nav>
