@@ -39,6 +39,9 @@ export default function App() {
       <main>
         <Outlet />
       </main>
+      <footer className="site-footer">
+        <img src="/images/home-people.png" alt="macaroni. ロゴ" loading="lazy" />
+      </footer>
     </>
   )
 }

@@ -31,9 +31,6 @@ export default function Home() {
           <div className="home-info-col home-info-left">
             <img src="/images/home-calendar-hours.png" alt="営業カレンダーと営業時間" loading="lazy" />
           </div>
-          <div className="home-info-col home-info-center">
-            <img src="/images/home-people.png" alt="ご利用シーンのイラスト" loading="lazy" />
-          </div>
           <div className="home-info-col home-info-right">
             <img src="/images/home-parking-info.png" alt="駐車場の案内図" loading="lazy" />
           </div>
