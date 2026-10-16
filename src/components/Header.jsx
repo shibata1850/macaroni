@@ -28,10 +28,17 @@ const ContactIcon = () => (
   </svg>
 )
 
+const PhoneIcon = () => (
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M7 4h5l2 6-3 2a14 14 0 0 0 6 6l2-3 6 2v5a2 2 0 0 1-2 2A20 20 0 0 1 5 6a2 2 0 0 1 2-2z" />
+  </svg>
+)
+
 const navItems = [
   { label: 'ホーム', path: '/', Icon: HomeIcon },
   { label: 'メニュー', path: '/menu', Icon: MenuIcon },
   { label: 'Instagram', href: 'https://www.instagram.com/macaroni.kitakami/', Icon: InstagramIcon },
+  { label: '電話', href: 'tel:0197726672', Icon: PhoneIcon },
   { label: 'お問い合わせ', path: '/contact', Icon: ContactIcon },
 ]
 
