@@ -21,11 +21,6 @@ export default function Menu() {
           style={{ backgroundImage: "url('/images/hero-counter.jpg')" }}
         />
         <div className="page-banner-overlay" />
-        <div className="page-banner-content">
-          <p className="label">Menu</p>
-          <h1>Le proposte</h1>
-          <p className="jp">ご利用シーンに合わせて</p>
-        </div>
       </section>
 
       <section className="menu-full">
