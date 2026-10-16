@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRevealAnimation } from '../hooks/useRevealAnimation.js'
 
@@ -6,11 +6,21 @@ export default function Home() {
   const navigate = useNavigate()
   useRevealAnimation()
   const [lightbox, setLightbox] = useState(null)
+  const videoRef = useRef(null)
+  const [soundOn, setSoundOn] = useState(false)
+
+  const toggleSound = () => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = !v.muted
+    setSoundOn(!v.muted)
+  }
 
   return (
     <section className="page" id="page-home">
       <section className="top-video-hero">
         <video
+          ref={videoRef}
           className="top-video"
           autoPlay
           muted
@@ -21,6 +31,26 @@ export default function Home() {
         >
           <source src="/videos/macaroni.mp4.mp4" type="video/mp4" />
         </video>
+        <button
+          type="button"
+          className="video-sound-toggle"
+          onClick={toggleSound}
+          aria-label={soundOn ? '音声をオフにする' : '音声をオンにする'}
+        >
+          {soundOn ? (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor" stroke="none" />
+              <path d="M16 9a4 4 0 0 1 0 6" />
+              <path d="M19 7a8 8 0 0 1 0 10" />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor" stroke="none" />
+              <path d="M16 9a4 4 0 0 1 0 6" />
+              <path d="M22 9l-5 6M17 9l5 6" />
+            </svg>
+          )}
+        </button>
       </section>
 
       <section className="home-info-section" aria-labelledby="home-info-title">
