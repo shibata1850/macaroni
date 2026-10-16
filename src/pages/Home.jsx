@@ -22,11 +22,6 @@ export default function Home() {
       </section>
 
       <section className="home-info-section" aria-labelledby="home-info-title">
-        <div className="home-info-header">
-          <span className="section-label section-label-both">Information</span>
-          <h2 id="home-info-title">営業日と駐車場</h2>
-          <p>ご来店前にご確認ください</p>
-        </div>
         <div className="home-info-images">
           <div className="home-info-col home-info-left">
             <img src="/images/home-calendar-hours.png" alt="営業カレンダーと営業時間" loading="lazy" />
