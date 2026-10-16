@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRevealAnimation } from '../hooks/useRevealAnimation.js'
 
 export default function Home() {
   const navigate = useNavigate()
   useRevealAnimation()
+  const [lightbox, setLightbox] = useState(null)
 
   return (
     <section className="page" id="page-home">
@@ -27,16 +29,32 @@ export default function Home() {
         </div>
         <div className="home-info-images">
           <div className="home-info-col home-info-left">
-            <img src="/images/home-calendar-hours.png" alt="営業カレンダーと営業時間" loading="lazy" />
+            <img
+              src="/images/home-calendar-hours.png"
+              alt="営業カレンダーと営業時間"
+              loading="lazy"
+              onClick={() => setLightbox('/images/home-calendar-hours.png')}
+            />
           </div>
           <div className="home-info-col home-info-right">
-            <img src="/images/home-parking-info.png" alt="駐車場の案内図" loading="lazy" />
+            <img
+              src="/images/home-parking-info.png"
+              alt="駐車場の案内図"
+              loading="lazy"
+              onClick={() => setLightbox('/images/home-parking-info.png')}
+            />
           </div>
         </div>
         <button className="home-info-link" type="button" onClick={() => navigate('/access')}>
           店舗案内を詳しく見る
         </button>
       </section>
+
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={() => setLightbox(null)}>
+          <img src={lightbox} alt="拡大画像" className="lightbox-img" />
+        </div>
+      )}
 
     </section>
   )
