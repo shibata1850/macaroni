@@ -18,6 +18,25 @@ export default function Contact() {
           <p className="contact-tel">
             <a href="tel:0197726672">0197-72-6672</a>
           </p>
+          <div className="contact-info-pdf-wrap">
+            <h2 className="contact-info-pdf-title">INFORMATION</h2>
+            <object
+              className="contact-info-pdf"
+              data="/documents/information.pdf"
+              type="application/pdf"
+              aria-label="営業時間・営業カレンダー・駐車場案内"
+            >
+              <p>店舗案内PDFをご確認ください。</p>
+            </object>
+            <a
+              className="shop-info-pdf-link"
+              href="/documents/information.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              店舗案内PDFを開く
+            </a>
+          </div>
         </div>
       </section>
     </section>
