@@ -59,12 +59,6 @@ export default function Home() {
             気取らず、肩肘張らず、日常的にふらっと立ち寄れる。<br />
             “macaroni.”はそんなお店です。
           </p>
-          <img
-            className="home-about-info-image"
-            src="/images/about-shop-info.png"
-            alt="macaroni.の店舗外観、住所、電話番号"
-            loading="lazy"
-          />
         </div>
       </section>
 
