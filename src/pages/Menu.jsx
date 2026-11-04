@@ -19,7 +19,7 @@ const menuViews = [
   {
     id: 'dessert',
     label: 'ドルチェ',
-    src: '/documents/DINNER_MENU.pdf#page=3&toolbar=0&navpanes=0&scrollbar=0',
+    src: '/documents/7da9fe83-fe59-4832-82c4-03da373e3360.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0',
   },
 ]
 
