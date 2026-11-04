@@ -58,7 +58,7 @@ export default function Menu() {
           {loading ? (
             <p className="shop-info-loading">読み込み中…</p>
           ) : currentText ? (
-            <pre className="menu-raw-text reveal">{currentText}</pre>
+            <pre className="menu-raw-text">{currentText}</pre>
           ) : (
             <div className="menu-empty">
               <p className="menu-empty-text">こちらのメニューは現在準備中です。</p>
