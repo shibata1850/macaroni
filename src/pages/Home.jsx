@@ -26,7 +26,6 @@ export default function Home() {
           muted
           loop
           playsInline
-          poster="/images/hero-veg-pc.jpg"
           aria-label="macaroni. 店内と料理の紹介動画"
         >
           <source src="/videos/macaroni.mp4.mp4" type="video/mp4" />
@@ -56,12 +55,12 @@ export default function Home() {
       <section className="home-about-section" aria-labelledby="home-about-title">
         <div className="home-about-inner">
           <span className="section-label section-label-both">About</span>
-          <h2 id="home-about-title" className="section-title">macaroni.</h2>
-          <p className="section-title-jp">北上市の小さな洋食店</p>
+          <h2 id="home-about-title" className="section-title">ABOUT</h2>
+          <p className="home-about-quote">“our place everyone”</p>
           <p className="home-about-text">
-            旬の野菜と素材を活かした料理を、北区の静かな通り沿いでお出ししています。<br />
-            ランチはもちろん、ディナーではワインと一緒にゆっくりと。<br />
-            あなたにとっての「いつもの」が見つかりますように。
+            ことはみんなの居場所。<br />
+            気取らず、肩肘張らず、日常的にふらっと立ち寄れる。<br />
+            “macaroni.”はそんなお店です。
           </p>
         </div>
       </section>
