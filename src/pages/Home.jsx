@@ -69,15 +69,11 @@ export default function Home() {
       </section>
 
       <footer className="home-footer">
-        <div className="home-footer-photo">
-          <img src="/images/home-people.png" alt="macaroni. 店内の様子" loading="lazy" />
-        </div>
-        <div className="home-footer-copy">
-          <span className="section-label section-label-both">See you soon</span>
-          <p className="home-footer-title">our place everyone</p>
-          <p className="home-footer-text">気取らず、肩肘張らず、日常的にふらっと立ち寄れる場所。</p>
-          <p className="home-footer-brand">macaroni<span className="brand-dot-en">.</span></p>
-        </div>
+        <img
+          src="/images/footer-shop-info.png"
+          alt="macaroni. 店舗外観、住所、電話番号"
+          loading="lazy"
+        />
       </footer>
     </section>
   )
