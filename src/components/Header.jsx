@@ -9,7 +9,8 @@ const HomeIcon = () => (
 
 const MenuIcon = () => (
   <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M6 8h20M6 16h20M6 24h20" />
+    <path d="M16 6C13 4 9 3 5 3v22c4 0 8 1 11 3 3-2 7-3 11-3V3c-4 0-8 1-11 3z" />
+    <path d="M16 6v22" />
   </svg>
 )
 
@@ -23,8 +24,8 @@ const InstagramIcon = () => (
 
 const ContactIcon = () => (
   <svg viewBox="0 0 32 32" aria-hidden="true">
-    <rect x="4" y="7" width="24" height="18" rx="2" />
-    <path d="m5 9 11 9L27 9" />
+    <circle cx="16" cy="16" r="12" />
+    <path d="M16 10v8M16 21v1.5" />
   </svg>
 )
 

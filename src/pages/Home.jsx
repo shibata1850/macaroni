@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <section className="page" id="page-home">
-      <section className="top-video-hero">
+      <section className="top-video-hero" style={{ height: '100vh', minHeight: '500px' }}>
         <video
           ref={videoRef}
           className="top-video"
@@ -53,9 +53,23 @@ export default function Home() {
         </button>
       </section>
 
+      <section className="home-about-section" aria-labelledby="home-about-title">
+        <div className="home-about-inner">
+          <span className="section-label section-label-both">About</span>
+          <h2 id="home-about-title" className="section-title">macaroni.</h2>
+          <p className="section-title-jp">北上市の小さな洋食店</p>
+          <p className="home-about-text">
+            旬の野菜と素材を活かした料理を、北区の静かな通り沿いでお出ししています。<br />
+            ランチはもちろん、ディナーではワインと一緒にゆっくりと。<br />
+            あなたにとっての「いつもの」が見つかりますように。
+          </p>
+        </div>
+      </section>
+
       <section className="home-info-section" aria-labelledby="home-info-title">
         <div className="home-info-header">
           <span className="section-label section-label-both">Information</span>
+          <h2 id="home-info-title">営業日・駐車場</h2>
         </div>
         <div className="home-info-images">
           <div className="home-info-col home-info-left">

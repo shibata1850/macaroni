@@ -1,30 +1,51 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRevealAnimation } from '../hooks/useRevealAnimation.js'
 
-const menuPages = [
-  'menu-page-01.jpg',
-  'menu-page-02.jpg',
-  'menu-page-03.jpg',
-  'menu-page-04.jpg',
-  'menu-page-05.jpg',
+const menuCategories = [
+  { id: 'lunch', label: 'Lunch', jp: 'ランチ', pages: ['menu-page-01.jpg'] },
+  { id: 'dinner', label: 'Dinner', jp: 'ディナー', pages: ['menu-page-02.jpg', 'menu-page-03.jpg'] },
+  { id: 'dessert', label: 'Dessert', jp: 'デザート', pages: ['menu-page-05.jpg'] },
+  { id: 'seasonal', label: 'Seasonal', jp: '季節のコース', pages: ['menu-page-04.jpg'] },
 ]
 
 export default function Menu() {
   const navigate = useNavigate()
   useRevealAnimation()
+  const [active, setActive] = useState('lunch')
+
+  const current = menuCategories.find((c) => c.id === active)
 
   return (
     <section className="page" id="page-menu">
       <section className="menu-full">
         <div className="menu-full-inner">
-          <div className="menu-full-section reveal" id="menu-dinner">
+          <div className="menu-category-tabs">
+            {menuCategories.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                className={`menu-category-tab${active === cat.id ? ' is-active' : ''}`}
+                onClick={() => setActive(cat.id)}
+              >
+                <span className="menu-tab-en">{cat.label}</span>
+                <span className="menu-tab-jp">{cat.jp}</span>
+              </button>
+            ))}
+          </div>
+
+          <div className="menu-full-section reveal" id={`menu-${active}`}>
+            <div className="menu-section-heading">
+              <span className="section-label section-label-both">{current.label}</span>
+              <h2 className="section-title">{current.jp}</h2>
+            </div>
             <div className="menu-pdf-pages">
-              {menuPages.map((page, i) => (
+              {current.pages.map((page, i) => (
                 <img
                   key={i}
                   className="menu-pdf-page"
                   src={`/images/${page}`}
-                  alt={`メニュー ページ${i + 1}`}
+                  alt={`${current.jp} メニュー ページ${i + 1}`}
                   loading="lazy"
                 />
               ))}
