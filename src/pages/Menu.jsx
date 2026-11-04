@@ -6,8 +6,8 @@ import { useRevealAnimation } from '../hooks/useRevealAnimation.js'
 const menuCategories = [
   { id: 'lunch', label: 'Lunch', jp: 'ランチ' },
   { id: 'dinner', label: 'Dinner', jp: 'ディナー' },
-  { id: 'dessert', label: 'Dessert', jp: 'デザート' },
-  { id: 'seasonal', label: 'Seasonal', jp: '季節のコース' },
+  { id: 'seasonal', label: 'Course', jp: 'コース・飲み放題' },
+  { id: 'drink', label: 'Drink', jp: 'ドリンク' },
 ]
 
 export default function Menu() {
