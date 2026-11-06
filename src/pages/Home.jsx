@@ -51,11 +51,10 @@ export default function Home() {
 
       <section className="home-about-section" aria-labelledby="home-about-title">
         <div className="home-about-inner">
-          <span className="section-label section-label-both">About</span>
           <h2 id="home-about-title" className="section-title">ABOUT</h2>
-          <p className="home-about-quote">“our place everyone”</p>
+          <p className="home-about-quote">our place for everyone</p>
           <p className="home-about-text">
-            ことはみんなの居場所。<br />
+            ここはみんなの居場所。<br />
             気取らず、肩肘張らず、日常的にふらっと立ち寄れる。<br />
             “macaroni.”はそんなお店です。
           </p>

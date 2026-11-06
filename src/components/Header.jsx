@@ -39,7 +39,7 @@ const navItems = [
   { label: 'ホーム', path: '/', Icon: HomeIcon },
   { label: 'メニュー', path: '/menu', Icon: MenuIcon },
   { label: 'Instagram', href: 'https://www.instagram.com/macaroni.kitakami/', Icon: InstagramIcon },
-  { label: '電話', href: 'tel:0197726672', Icon: PhoneIcon },
+  { label: '電話', href: 'tel:0197726672', Icon: PhoneIcon, className: 'header-nav-link--phone' },
   { label: 'お問い合わせ', path: '/contact', Icon: ContactIcon },
 ]
 
@@ -62,10 +62,10 @@ export default function Header() {
       </a>
 
       <nav className="header-nav" aria-label="メインメニュー">
-        {navItems.map(({ label, path, href, Icon }) => (
+        {navItems.map(({ label, path, href, Icon, className }) => (
           <a
             key={label}
-            className={`header-nav-link${path && location.pathname === path ? ' is-active' : ''}`}
+            className={`header-nav-link${className ? ` ${className}` : ''}${path && location.pathname === path ? ' is-active' : ''}`}
             href={href || `#${path}`}
             target={href ? '_blank' : undefined}
             rel={href ? 'noopener noreferrer' : undefined}
@@ -77,6 +77,14 @@ export default function Header() {
             } : undefined}
           >
             <Icon />
+            <span>{label}</span>
+            {path === '/menu' && (
+              <div className="menu-hover-panel" role="menu">
+                {['Lunch', 'Dinner', 'Course', 'Party Plan', 'Dessert', 'Drink'].map((item) => (
+                  <span key={item} role="menuitem">{item}</span>
+                ))}
+              </div>
+            )}
           </a>
         ))}
       </nav>
