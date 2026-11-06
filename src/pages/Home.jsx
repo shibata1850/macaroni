@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <section className="page" id="page-home">
-      <section className="top-video-hero" style={{ height: '100vh', minHeight: '500px' }}>
+      <section className="top-video-hero">
         <video
           ref={videoRef}
           className="top-video"
