@@ -28,14 +28,6 @@ export default function Home() {
           <source src="/videos/macaroni.mp4.mp4" type="video/mp4" />
         </video>
         <div className="top-video-overlay" />
-        <div className="top-video-caption">
-          <p className="top-video-tagline">our place for everyone</p>
-          <p className="top-video-sub">ここはみんなの居場所</p>
-        </div>
-        <div className="scroll-hint" aria-hidden="true">
-          <span className="scroll-hint-text">SCROLL</span>
-          <span className="scroll-hint-line" />
-        </div>
         <button
           type="button"
           className="video-sound-toggle"
