@@ -43,7 +43,7 @@ const menuViews = [
 ]
 
 export default function Menu() {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const requestedId = searchParams.get('category')
   const initialId = menuViews.some((menu) => menu.id === requestedId) ? requestedId : 'lunch'
   const [activeId, setActiveId] = useState(initialId)
@@ -61,21 +61,6 @@ export default function Menu() {
     <section className="page" id="page-menu">
       <section className="menu-document-page">
         <div className="menu-document-inner">
-          <nav className="menu-document-tabs" aria-label="メニューカテゴリー">
-            {menuViews.map((menu) => (
-              <button
-                key={menu.id}
-                type="button"
-                className={`menu-document-tab${activeId === menu.id ? ' is-active' : ''}`}
-                onClick={() => {
-                  setActiveId(menu.id)
-                  setSearchParams({ category: menu.id })
-                }}
-              >
-                {menu.label}
-              </button>
-            ))}
-          </nav>
           {isImageMenu ? (
             <img
               key={activeMenu.src}
