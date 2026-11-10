@@ -63,11 +63,14 @@ export default function Home() {
       </section>
 
       <footer className="home-footer">
-        <img
-          src="/images/footer-shop-info.png"
-          alt="macaroni. 店舗外観、住所、電話番号"
-          loading="lazy"
-        />
+        <div className="home-footer-info">
+          <p className="home-footer-brand">macaroni<span className="brand-dot-en">.</span></p>
+          <address className="home-footer-address">
+            <p>〒024-0092</p>
+            <p>岩手県北上市新穀町1丁目7-35</p>
+          </address>
+          <a className="home-footer-phone" href="tel:0197726672">0197-72-6672</a>
+        </div>
       </footer>
     </section>
   )
