@@ -22,14 +22,16 @@ const menuViews = [
   {
     id: 'party',
     label: 'Party Plan',
-    src: '/images/menu-page-02.jpg',
-    alt: 'パーティープラン',
+    src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=5&toolbar=0&navpanes=0&scrollbar=0',
+    alt: '飲み放題メニュー',
+    crop: 'party',
   },
   {
     id: 'drink',
     label: 'Drink',
     src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=5&toolbar=0&navpanes=0&scrollbar=0',
     alt: 'ドリンクメニュー',
+    crop: 'drink',
   },
   {
     id: 'dessert',
@@ -43,6 +45,7 @@ export default function Menu() {
   const [activeId, setActiveId] = useState('lunch')
   const activeMenu = menuViews.find((menu) => menu.id === activeId) ?? menuViews[0]
   const isImageMenu = activeMenu.src.startsWith('/images/')
+  const isCroppedMenu = Boolean(activeMenu.crop)
 
   return (
     <section className="page" id="page-menu">
@@ -68,6 +71,15 @@ export default function Menu() {
               alt={activeMenu.alt}
               loading="eager"
             />
+          ) : isCroppedMenu ? (
+            <div className={`menu-document-crop menu-document-crop-${activeMenu.crop}`}>
+              <iframe
+                key={activeMenu.src}
+                className="menu-document menu-document-crop-frame"
+                src={activeMenu.src}
+                title={`${activeMenu.label}メニュー`}
+              />
+            </div>
           ) : (
             <iframe
               key={activeMenu.src}
