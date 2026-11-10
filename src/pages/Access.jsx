@@ -43,7 +43,14 @@ export default function Access() {
           />
           <p
             className="shop-info-text shop-info-text-summary"
-            style={{ whiteSpace: 'pre-line', margin: 0 }}
+            style={{
+              whiteSpace: 'pre-line',
+              margin: 0,
+              padding: 0,
+              background: 'transparent',
+              border: 'none',
+              boxShadow: 'none',
+            }}
           >
             {informationText}
           </p>
