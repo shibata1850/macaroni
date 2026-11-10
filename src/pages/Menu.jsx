@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 const menuViews = [
   {
@@ -42,8 +43,17 @@ const menuViews = [
 ]
 
 export default function Menu() {
-  const [activeId, setActiveId] = useState('lunch')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const requestedId = searchParams.get('category')
+  const initialId = menuViews.some((menu) => menu.id === requestedId) ? requestedId : 'lunch'
+  const [activeId, setActiveId] = useState(initialId)
   const activeMenu = menuViews.find((menu) => menu.id === activeId) ?? menuViews[0]
+
+  useEffect(() => {
+    if (requestedId && menuViews.some((menu) => menu.id === requestedId)) {
+      setActiveId(requestedId)
+    }
+  }, [requestedId])
   const isImageMenu = activeMenu.src.startsWith('/images/')
   const isCroppedMenu = Boolean(activeMenu.crop)
 
@@ -57,7 +67,10 @@ export default function Menu() {
                 key={menu.id}
                 type="button"
                 className={`menu-document-tab${activeId === menu.id ? ' is-active' : ''}`}
-                onClick={() => setActiveId(menu.id)}
+                onClick={() => {
+                  setActiveId(menu.id)
+                  setSearchParams({ category: menu.id })
+                }}
               >
                 {menu.label}
               </button>

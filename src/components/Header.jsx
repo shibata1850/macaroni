@@ -35,6 +35,15 @@ const PhoneIcon = () => (
   </svg>
 )
 
+const menuLinks = [
+  { label: 'Lunch', id: 'lunch' },
+  { label: 'Dinner', id: 'dinner' },
+  { label: 'Course', id: 'course' },
+  { label: 'Party Plan', id: 'party' },
+  { label: 'Dessert', id: 'dessert' },
+  { label: 'Drink', id: 'drink' },
+]
+
 const navItems = [
   { label: 'ホーム', path: '/', Icon: HomeIcon },
   { label: 'メニュー', path: '/menu', Icon: MenuIcon },
@@ -80,8 +89,26 @@ export default function Header() {
             <span>{label}</span>
             {path === '/menu' && (
               <div className="menu-hover-panel" role="menu">
-                {['Lunch', 'Dinner', 'Course', 'Party Plan', 'Dessert', 'Drink'].map((item) => (
-                  <span key={item} role="menuitem">{item}</span>
+                {menuLinks.map((item) => (
+                  <span
+                    key={item.id}
+                    role="menuitem"
+                    tabIndex={0}
+                    onClick={(event) => {
+                      event.preventDefault()
+                      event.stopPropagation()
+                      navigate(`/menu?category=${item.id}`)
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault()
+                        event.stopPropagation()
+                        navigate(`/menu?category=${item.id}`)
+                      }
+                    }}
+                  >
+                    {item.label}
+                  </span>
                 ))}
               </div>
             )}
