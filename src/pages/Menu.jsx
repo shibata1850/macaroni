@@ -4,38 +4,45 @@ const menuViews = [
   {
     id: 'lunch',
     label: 'Lunch',
-    src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0',
+    src: '/images/menu-page-03.jpg',
+    alt: 'ランチメニュー',
   },
   {
     id: 'dinner',
     label: 'Dinner',
-    src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=2&toolbar=0&navpanes=0&scrollbar=0',
+    src: '/images/menu-page-01.jpg',
+    alt: 'ディナーメニュー',
   },
   {
     id: 'course',
     label: 'Course',
-    src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=3&toolbar=0&navpanes=0&scrollbar=0',
+    src: '/images/menu-page-05.jpg',
+    alt: 'コースメニュー',
   },
   {
     id: 'party',
     label: 'Party Plan',
-    src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=4&toolbar=0&navpanes=0&scrollbar=0',
+    src: '/images/menu-page-02.jpg',
+    alt: 'パーティープラン',
   },
   {
     id: 'drink',
     label: 'Drink',
     src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=5&toolbar=0&navpanes=0&scrollbar=0',
+    alt: 'ドリンクメニュー',
   },
   {
     id: 'dessert',
     label: 'Dessert',
     src: '/documents/7da9fe83-fe59-4832-82c4-03da373e3360.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0',
+    alt: 'デザートメニュー',
   },
 ]
 
 export default function Menu() {
   const [activeId, setActiveId] = useState('lunch')
   const activeMenu = menuViews.find((menu) => menu.id === activeId) ?? menuViews[0]
+  const isImageMenu = activeMenu.src.startsWith('/images/')
 
   return (
     <section className="page" id="page-menu">
@@ -53,12 +60,22 @@ export default function Menu() {
               </button>
             ))}
           </nav>
-          <iframe
-            key={activeMenu.src}
-            className="menu-document"
-            src={activeMenu.src}
-            title={`${activeMenu.label}メニュー`}
-          />
+          {isImageMenu ? (
+            <img
+              key={activeMenu.src}
+              className="menu-document menu-document-image"
+              src={activeMenu.src}
+              alt={activeMenu.alt}
+              loading="eager"
+            />
+          ) : (
+            <iframe
+              key={activeMenu.src}
+              className="menu-document"
+              src={activeMenu.src}
+              title={`${activeMenu.label}メニュー`}
+            />
+          )}
         </div>
       </section>
     </section>
