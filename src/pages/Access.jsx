@@ -19,7 +19,6 @@ export default function Access() {
         />
         <div className="page-banner-overlay" />
         <div className="page-banner-content">
-          <p className="label">Information</p>
           <h1>Visit us.</h1>
           <p className="jp">店舗案内</p>
         </div>
