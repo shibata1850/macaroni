@@ -6,7 +6,7 @@ const pageTitles = {
   '/': 'macaroni. ｜ マカロニ．｜ 北上市の洋食店',
   '/menu': 'Menu ｜ macaroni. ｜ マカロニ．',
   '/access': 'Information ｜ macaroni. ｜ マカロニ．',
-  '/contact': 'Contact ｜ macaroni. ｜ マカロニ．',
+  '/contact': 'Information ｜ macaroni. ｜ マカロニ．',
   '/login': 'ログイン ｜ macaroni.',
   '/admin': '管理画面 ｜ macaroni.',
 }
