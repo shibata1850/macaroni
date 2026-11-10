@@ -71,7 +71,12 @@ export default function Home() {
           />
         </div>
         <div className="home-footer-info">
-          <p className="home-footer-brand">macaroni<span className="brand-dot-en">.</span></p>
+          <img
+            className="home-footer-logo"
+            src="/images/logo.png"
+            alt="macaroni."
+            loading="lazy"
+          />
           <address className="home-footer-address">
             <p>〒024-0092</p>
             <p>岩手県北上市新穀町1丁目7-35</p>
