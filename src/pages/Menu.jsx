@@ -30,9 +30,8 @@ const menuViews = [
   {
     id: 'drink',
     label: 'Drink',
-    src: '/documents/875d96e0-2e7c-44a5-8803-56f926394ced.pdf#page=5&toolbar=0&navpanes=0&scrollbar=0',
+    src: '/documents/DRINK_MENU-1-2.pdf#toolbar=0&navpanes=0&scrollbar=0',
     alt: 'ドリンクメニュー',
-    crop: 'drink',
   },
   {
     id: 'dessert',
