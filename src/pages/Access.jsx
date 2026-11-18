@@ -45,6 +45,9 @@ export default function Access() {
             className="shop-info-text shop-info-text-summary"
             style={{
               whiteSpace: 'pre-line',
+              fontSize: '1rem',
+              fontWeight: 400,
+              lineHeight: 1.9,
               margin: 0,
               padding: 0,
               background: 'transparent',
